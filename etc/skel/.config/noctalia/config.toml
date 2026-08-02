@@ -139,12 +139,6 @@ source = "wallpaper"
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "kcolorscheme", "qt" ]
 
-[theme]
-builtin = "Noctalia"
-mode = "dark"
-source = "wallpaper"
-wallpaper_scheme = "m3-content"
-
 [widget.Spacer]
 length = 10
 type = "spacer"
