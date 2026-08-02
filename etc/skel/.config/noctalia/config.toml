@@ -1,6 +1,6 @@
 [bar.default]
 background_opacity = 0.89999997988343239
-center = [ "workspaces", "Spacer_2", "media", "Spacer_2, "cat" ]
+center = [ "workspaces", "Spacer_2", "media", "Spacer_2", "cat" ]
 end = [
     "tray",
     "Spacer_2",
@@ -37,9 +37,9 @@ behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
 
     [idle.behavior.Screen-off]
     action = "command"
-    command = "jay randr output DP-1 disable; jay randr output DP-2 disable"
-    enabled = true
-    resume_command = "jay randr output DP-1 enable; jay randr output DP-2 enable"
+    command = ""
+    enabled = false
+    resume_command = ""
     timeout = 300.0
 
     [idle.behavior.lock]

@@ -21,10 +21,26 @@ window-management-key = "Super_L"
 # -- So Jay's configuration will reload automatically.
 auto-reload = true
 
+# -- So Jay will also reload output config automatically in config changes.
+device-config-filter = "all"
+
+# -- So Jay will clean up logs older than 7 days.
+clean-logs-older-than.days = 7
+
 # -- Let Noctalia take care of the idle.
 idle = {
-    minutes = 0,
+    minutes = 5,
+    grace-period = { seconds = 5 },
 }
+
+# -- https://mahkoh.github.io/jay/book/configuration/gpu.html --
+# -- Enabling color-pipelines, so direct-scanout will work with HDR in fullscreen applications.
+[[drm-devices]]
+# match = {
+#    pci-vendor = 0x1002,
+#    pci-model = 0x73ef,
+# }
+# plane-color-pipelines = true
 
 # -- https://mahkoh.github.io/jay/book/configuration/inputs.html --
 # -- Uncomment the lines below to disable mouse acceleration.
@@ -104,7 +120,6 @@ logo-e = { type = "exec", exec = "dolphin" }
 # -- Noctalia
 logo-space = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "launcher" ] }
 logo-w = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "noctalia/wallhaven:browser" ] }
-logo-shift-g = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "leo/game-launcher:browser" ] }
 logo-s = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "control-center" ] }
 logo-shift-s = { type = "exec", exec = [ "noctalia", "msg", "settings-toggle" ] }
 logo-shift-e = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "session" ] }
@@ -226,9 +241,32 @@ match.any = [
    { app-id = "com.shellyorg.shelly" },
    { app-id = "org.kde.dolphin" },
    { x-class = "steam", not.title-regex = "^[Ss]team$" },
-   { title = "^Steam Settings$" },
+   { title-regex = "^Steam Settings$" },
+   { title-regex = "^(Open File)(.*)$" },
+   { title-regex = "^(Select a File)(.*)$" },
+   { title-regex = "^(Choose wallpaper)(.*)$" },
+   { title-regex = "^(Open Folder)(.*)$" },
+   { title-regex = "^(Save As)(.*)$" },
+   { title-regex = "^(Library)(.*)$" },
+   { title-regex = "^(File Upload)(.*)$" },
+   { title-regex = "(.*)(wants to save)$" },
+   { title-regex = "^(Select EXE to Run)(.*)$" },
+   { title-regex = "^(pavucontrol)$" },
+   { title-regex = "^.*Welcome$" },
+   { title-regex = "^(Copying — Dolphin)$" },
+   { title-regex = "^.*is sharing (a window|your screen).*$" },
+   { title-regex = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
+   { title-regex = "^Vivaldi Settings.*$" },
+   { title-regex = "^(Select AppImage to Install)(.*)$" },
+   { title-regex = "^(Select Install Path)(.*)$" },
+
 ]
 initial-tile-state = "floating"
+
+# -- So floating windows will show up above fullscreen windows.
+[[windows]]
+match.floating = true
+action = "enable-float-above-fullscreen"
 
 # -- https://mahkoh.github.io/jay/book/window-rules.html#granting-privileges --
 # -- So all clients have access to the privileged protocols. This also make sure Noctalia can manage workspaces, see active windows, take screenshots, etc.
