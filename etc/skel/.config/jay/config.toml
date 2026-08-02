@@ -90,15 +90,15 @@ highlight-color = "#f5c2e7"
 # -- https://mahkoh.github.io/jay/book/configuration/shortcuts.html --
 # -- 'logo' is your Win/Super key.
 [shortcuts]
-logo-h = "focus-left"
-logo-j = "focus-down"
-logo-k = "focus-up"
-logo-l = "focus-right"
+logo-Left = "focus-left"
+logo-Down = "focus-down"
+logo-Up = "focus-up"
+logo-Right = "focus-right"
 
-logo-shift-h = "move-left"
-logo-shift-j = "move-down"
-logo-shift-k = "move-up"
-logo-shift-l = "move-right"
+logo-shift-Left = "move-left"
+logo-shift-Down = "move-down"
+logo-shift-Up = "move-up"
+logo-shift-Right = "move-right"
 
 logo-d = "split-horizontal"
 logo-v = "split-vertical"
