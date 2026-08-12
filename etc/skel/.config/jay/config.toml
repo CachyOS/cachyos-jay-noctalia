@@ -209,13 +209,13 @@ XF86AudioPrev = {
 }
 XF86AudioPlay = {
     action.type = "exec",
-    action.exec.shell = "noctalia msg media play",
+    action.exec.shell = "noctalia msg media toggle",
     repeat = true,
     allow-locked = true,
 }
 XF86AudioPause = {
     action.type = "exec",
-    action.exec.shell = "noctalia msg media stop",
+    action.exec.shell = "noctalia msg media toggle",
     repeat = true,
     allow-locked = true,
 }
