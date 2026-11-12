@@ -5,12 +5,6 @@ keymap.rmlvo = {
     variants = "",
 }
 
-# -- https://mahkoh.github.io/jay/book/configuration/startup.html --
-# -- Start your favorite programs at startup.
-on-graphics-initialized = [
-    { type = "exec", exec = ["noctalia", "--daemon"] },
-]
-
 # -- Enable/disable Jay's default bar and also window title bars.
 show-bar = false
 show-titles = false
@@ -114,8 +108,7 @@ logo-q = "close"
 logo-v = "toggle-floating"
 logo-shift-v = "toggle-float-above-fullscreen"
 
-logo-Return = { type = "exec", exec = "alacritty" }
-logo-e = { type = "exec", exec = "dolphin" }
+logo-Return = { type = "exec", exec = "uwsm-app -T" }
 
 # -- Noctalia
 logo-space = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "launcher" ] }
@@ -239,7 +232,6 @@ XF86MonBrightnessDown = {
 [[windows]]
 match.any = [
    { app-id = "com.shellyorg.shelly" },
-   { app-id = "org.kde.dolphin" },
    { x-class = "steam", not.title-regex = "^[Ss]team$" },
    { title-regex = "^Steam Settings$" },
    { title-regex = "^(Open File)(.*)$" },
@@ -251,12 +243,9 @@ match.any = [
    { title-regex = "^(File Upload)(.*)$" },
    { title-regex = "(.*)(wants to save)$" },
    { title-regex = "^(Select EXE to Run)(.*)$" },
-   { title-regex = "^(pavucontrol)$" },
    { title-regex = "^.*Welcome$" },
-   { title-regex = "^(Copying — Dolphin)$" },
    { title-regex = "^.*is sharing (a window|your screen).*$" },
    { title-regex = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
-   { title-regex = "^Vivaldi Settings.*$" },
    { title-regex = "^(Select AppImage to Install)(.*)$" },
    { title-regex = "^(Select Install Path)(.*)$" },
 
